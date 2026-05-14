@@ -1,7 +1,21 @@
 package com.example.exercicioAluno.model;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "Alunos")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Aluno {
-
-    //teste
-
+    @Id
+    @GeneratedValue(
+            strategy= GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String curso;
+    private Integer matricula;
 }
